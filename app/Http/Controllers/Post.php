@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Post extends Controller
 {
@@ -61,5 +62,14 @@ class Post extends Controller
         return view('detail', [
             'post'=>$post,
         ]);
+    }
+    public function comment(Request $request, $id){
+        $post = \App\Post::find($id);
+        $comment = new \App\Comment();
+        $comment->text = $request->text;
+        $comment->user_id = Auth::user()->id;
+        $comment->post_id = $post->id;
+        $comment->save();
+        return redirect('/post/'.$post->id);
     }
 }

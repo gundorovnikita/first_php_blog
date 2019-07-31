@@ -40,3 +40,5 @@ Route::get('cat/{id}','Categories@detail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/comment/{id}','Post@comment')->middleware('auth');

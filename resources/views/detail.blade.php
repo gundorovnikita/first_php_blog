@@ -11,5 +11,28 @@
 	  	<div class="text">{{ $post->description }}</div>
 	  	<hr>
 	  	Относится к категории: <a href="/cat/{{$post->category->id}}" class="category_link">{{ $post->category->name }}</a>
+
+		<h4>Оставить комментарий:</h4>
+		
+	  	<form action="/comment/{{$post->id}}" method="post">
+		{{ csrf_field() }}
+		{{ method_field('POST') }}
+		text - <input name="text" type="text"  maxlength="60">
+		<br>
+		<br>	
+		<button type="submit">submit</button>
+		</form>
+
+	  	<h3>Comments:</h3>
+
+		@foreach($post->comments as $comment)
+
+			<div class="post">
+				<div class="article">{{ $comment->user->name }}</div>
+            	<div class="text">{{ $comment->text }}</div>         
+    		</div>
+
+		@endforeach
+
 	</div>
 @endsection
