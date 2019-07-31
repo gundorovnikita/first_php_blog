@@ -10,6 +10,18 @@ body{
 	height: 34px;
 	background-color: #4A76A8;
 }
+
+.head a{
+	text-decoration:none;
+	color: white;
+	font-size: 28px;
+	margin-right: 25px;
+}
+
+.head a:hover{
+	text-shadow: 0 0 10px black;
+}
+
 .post{
 	border: 1px solid #FFFFFF;
 	border-radius: 4px;
@@ -22,6 +34,13 @@ body{
 	font-size: 20px;
 	margin: 10px;
 }
+
+img{
+	max-width: 200px;
+	max-height: 300px;
+	margin: 15px;
+}
+
 .more{
 	text-decoration:none;
 	position: absolute;
@@ -34,12 +53,7 @@ body{
 .more:hover{
 	color: #4b4b4b;
 }
-.head a{
-	text-decoration:none;
-	color: white;
-	font-size: 28px;
-	margin-right: 25px;
-}
+
 .text{
 	margin-left: 13px;
 	padding-bottom: 10px;
@@ -52,13 +66,26 @@ body{
 }
 .black_link{
 	color: black;
+	display: block;
 	text-decoration: none;
+	height: 100%;
+	width: 100%;
 }
-.string{
+.category{
 	margin-top: 10px;
 }
-.string_link{
-	color: black;
+.category_link{
+	color: white;
 	text-decoration: none;
 	margin-right: 4px;
+	background-color: #4A76A8;
+	border-radius: 15px;
+	padding: 2px;
+}
+.category_link:hover{
+	background-color: #223c59;
+}
+
+.user_name{
+	float: right;
 }

@@ -8,7 +8,7 @@
 @foreach($category->post as $post)
 
 	<div class="post">
-            <div class="article"><a href="/{{ $post->id }}" class="black_link">{{ $post->title }}</a></div>         
+            <div class="article"><a href="/post/{{ $post->id }}" class="black_link">{{ $post->title }}</a></div>         
     </div>
 
 @endforeach

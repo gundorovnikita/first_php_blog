@@ -13,24 +13,30 @@
 
 Route::get('/', 'Post@index');
 
-Route::get('create', 'Post@create');
+Route::get('create', 'Post@create')->middleware('auth')->middleware('admin');
 
 Route::get('get', 'Post@get');
 
 
-Route::get('category', 'Categories@create');
+Route::get('category', 'Categories@create')->middleware('auth')->middleware('admin');
 
 Route::post('category', 'Categories@store');
 
 
-Route::get('cat/{id}','Categories@detail');
-
 
 Route::post('/', 'Post@store');
 
-Route::post('{id}', 'Post@delete');
+Route::post('post/{id}', 'Post@delete')->middleware('auth')->middleware('admin');
 
-Route::get('{id}', 'Post@detail');
+Route::get('post/{id}', 'Post@detail');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::get('cat/{id}','Categories@detail');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
